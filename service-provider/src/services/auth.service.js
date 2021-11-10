@@ -2,7 +2,7 @@ import axios from "axios";
 
 const {BACKEND_PORT} = require("../config/backend.config");
 
-const API_URL = `http://localhost:${BACKEND_PORT}/api/test/`;
+const API_URL = `http://localhost:${BACKEND_PORT}/api/auth/`;
 
 class AuthService {
     login(username, password) {

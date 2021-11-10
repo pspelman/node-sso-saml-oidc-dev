@@ -19,7 +19,7 @@ services:
       - sso
     depends_on:
       - mongodb
-    build: ./backend
+    build: identity-provider
     restart: unless-stopped
     env_file: ./.env
     ports:
@@ -32,14 +32,14 @@ services:
       - DB_PORT=$MONGODB_DOCKER_PORT
     stdin_open: true
     tty: true
-  frontend:
-    build: ./frontend
-    env_file: ./frontend/.env
-    command: yarn start
-    ports:
-      - $FRONTEND_LOCAL_PORT:$FRONTEND_DOCKER_PORT
-    stdin_open: true
-    tty: true
+#  frontend:  # service provider (sidecar)
+#    build: ./frontend
+#    env_file: ./frontend/.env
+#    command: yarn start
+#    ports:
+#      - $FRONTEND_LOCAL_PORT:$FRONTEND_DOCKER_PORT
+#    stdin_open: true
+#    tty: true
 networks:
   sso:
 volumes:

@@ -11,7 +11,7 @@ console.log(`PORT: `, PORT);
 const app = express();
 
 var corsOptions = {
-    origin: "http://localhost:8081"
+    origin: "*"
 };
 
 app.use(cors(corsOptions));
@@ -25,6 +25,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 const db = require("./app/models");
 const Role = db.role;
 
+console.log(`trying to connect: `, dbConfig.url);
 db.mongoose
     // .connect(`mongodb://${dbConfig.DB_HOST}:${dbConfig.DB_PORT}/${dbConfig.DB_NAME}`, {
     // .connect(`mongodb://${dbConfig.DB_HOST}:${dbConfig.DB_PORT}/${dbConfig.DB_NAME}`, {
