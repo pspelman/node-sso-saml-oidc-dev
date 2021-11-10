@@ -14,7 +14,7 @@ services:
       - $MONGODB_LOCAL_PORT:$MONGODB_DOCKER_PORT
     volumes:
       - db:/data/db
-  app:
+  backend:
     networks:
       - sso
     depends_on:
@@ -30,6 +30,14 @@ services:
       - DB_PASSWORD=$MONGODB_PASSWORD
       - DB_NAME=$MONGODB_DATABASE
       - DB_PORT=$MONGODB_DOCKER_PORT
+    stdin_open: true
+    tty: true
+  frontend:
+    build: ./frontend
+    env_file: ./frontend/.env
+    command: yarn start
+    ports:
+      - $FRONTEND_LOCAL_PORT:$FRONTEND_DOCKER_PORT
     stdin_open: true
     tty: true
 networks:
