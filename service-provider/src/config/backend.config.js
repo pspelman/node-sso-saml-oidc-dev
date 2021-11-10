@@ -1,6 +1,6 @@
 require("dotenv").config();
 
 module.exports = {
-  BACKEND_PORT: process.env.BACKEND_PORT || 8080,
+  IDENTITY_PROVIDER_PORT: process.env.IDENTITY_PROVIDER_PORT || 8080,
   secret: "ssoda-secret-key"
 };

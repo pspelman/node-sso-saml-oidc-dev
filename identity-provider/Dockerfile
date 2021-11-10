@@ -21,7 +21,7 @@ FROM node:16 as builder
 WORKDIR /usr/src/app
 COPY . .
 COPY --chown=node:node --from=dependencies /usr/src/app/node_modules /usr/src/app/node_modules
-# NOTE: Skip for backend
+# NOTE: Skip for identityProvider
 # RUN yarn build
 
 

@@ -1,9 +1,9 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const {BACKEND_PORT} = require("../config/backend.config");
+const {IDENTITY_PROVIDER_PORT} = require("../config/backend.config");
 
-const API_URL = `http://localhost:${BACKEND_PORT}/api/test/`;
+const API_URL = `http://localhost:${IDENTITY_PROVIDER_PORT}/api/test/`;
 
 class UserService {
     getPublicContent() {

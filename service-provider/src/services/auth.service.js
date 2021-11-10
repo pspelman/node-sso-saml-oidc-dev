@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const {BACKEND_PORT} = require("../config/backend.config");
+const {IDENTITY_PROVIDER_PORT} = require("../config/backend.config");
 
-const API_URL = `http://localhost:${BACKEND_PORT}/api/auth/`;
+const API_URL = `http://localhost:${IDENTITY_PROVIDER_PORT}/api/auth/`;
 
 class AuthService {
     login(username, password) {
